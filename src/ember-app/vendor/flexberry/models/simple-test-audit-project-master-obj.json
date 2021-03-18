@@ -1,0 +1,153 @@
+﻿{
+  "name": "SimpleTestAuditProjectMasterObj",
+  "modelName": "simple-test-audit-project-master-obj",
+  "className": "MasterObj",
+  "nameSpace": "SimpleTestAuditProject",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "masterName",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "masterField",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "createTime",
+      "type": "date",
+      "flexberryType": "AuditNullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "creator",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "editTime",
+      "type": "date",
+      "flexberryType": "AuditNullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "editor",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [
+    {
+      "name": "masterDetail",
+      "relatedTo": "simple-test-audit-project-master-detail",
+      "inverse": "masterObj"
+    }
+  ],
+  "projections": [
+    {
+      "name": "AuditView",
+      "modelName": "simple-test-audit-project-master-obj",
+      "attrs": [
+        {
+          "name": "masterName",
+          "caption": "Master name",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "masterField",
+          "caption": "Master field",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": [
+        {
+          "projectionName": "AuditView",
+          "caption": "Master detail",
+          "name": "masterDetail",
+          "relatedTo": "simple-test-audit-project-master-detail",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "MasterObjE",
+      "modelName": "simple-test-audit-project-master-obj",
+      "attrs": [
+        {
+          "name": "masterName",
+          "caption": "",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "masterField",
+          "caption": "",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": [
+        {
+          "projectionName": "MasterDetailD",
+          "caption": "",
+          "name": "masterDetail",
+          "relatedTo": "simple-test-audit-project-master-detail",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "MasterObjL",
+      "modelName": "simple-test-audit-project-master-obj",
+      "attrs": [
+        {
+          "name": "masterName",
+          "caption": "",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "masterField",
+          "caption": "",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
