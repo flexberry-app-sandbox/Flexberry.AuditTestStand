@@ -1,0 +1,4 @@
+import SimpleTestAuditProjectDetailMasterEController from '../simple-test-audit-project-detail-master-e';
+
+var SimpleTestAuditProjectDetailMasterENewController = SimpleTestAuditProjectDetailMasterEController;
+export default SimpleTestAuditProjectDetailMasterENewController;
