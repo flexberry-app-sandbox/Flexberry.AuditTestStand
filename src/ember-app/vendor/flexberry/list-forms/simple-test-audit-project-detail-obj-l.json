@@ -1,6 +1,6 @@
 ﻿{
-  "newForm": null,
-  "editForm": null,
+  "newForm": "simple-test-audit-project-detail-obj-e",
+  "editForm": "simple-test-audit-project-detail-obj-e",
   "external": false,
   "caption": "",
   "name": "SimpleTestAuditProjectDetailObjL",

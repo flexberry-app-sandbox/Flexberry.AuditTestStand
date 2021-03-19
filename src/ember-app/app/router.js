@@ -7,25 +7,25 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
   this.route('simple-test-audit-project-detail-master-l');
-  this.route('null',
-  { path: 'null/:id' });
-  this.route('null.new',
-  { path: 'null/new' });
+  this.route('simple-test-audit-project-detail-master-e',
+  { path: 'simple-test-audit-project-detail-master-e/:id' });
+  this.route('simple-test-audit-project-detail-master-e.new',
+  { path: 'simple-test-audit-project-detail-master-e/new' });
   this.route('simple-test-audit-project-detail-obj-l');
-  this.route('null',
-  { path: 'null/:id' });
-  this.route('null.new',
-  { path: 'null/new' });
+  this.route('simple-test-audit-project-detail-obj-e',
+  { path: 'simple-test-audit-project-detail-obj-e/:id' });
+  this.route('simple-test-audit-project-detail-obj-e.new',
+  { path: 'simple-test-audit-project-detail-obj-e/new' });
   this.route('simple-test-audit-project-main-obj-l');
-  this.route('null',
-  { path: 'null/:id' });
-  this.route('null.new',
-  { path: 'null/new' });
+  this.route('simple-test-audit-project-main-obj-e',
+  { path: 'simple-test-audit-project-main-obj-e/:id' });
+  this.route('simple-test-audit-project-main-obj-e.new',
+  { path: 'simple-test-audit-project-main-obj-e/new' });
   this.route('simple-test-audit-project-master-obj-l');
-  this.route('null',
-  { path: 'null/:id' });
-  this.route('null.new',
-  { path: 'null/new' });
+  this.route('simple-test-audit-project-master-obj-e',
+  { path: 'simple-test-audit-project-master-obj-e/:id' });
+  this.route('simple-test-audit-project-master-obj-e.new',
+  { path: 'simple-test-audit-project-master-obj-e/new' });
 });
 
 export default Router;

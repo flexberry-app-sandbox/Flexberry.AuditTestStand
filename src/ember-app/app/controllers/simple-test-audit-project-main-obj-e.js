@@ -1,6 +1,7 @@
 import EditFormController from 'ember-flexberry/controllers/edit-form';
 
 export default EditFormController.extend({
+  parentRoute: 'simple-test-audit-project-main-obj-l',
 
   getCellComponent(attr, bindingPath, model) {
     let cellComponent = this._super(...arguments);

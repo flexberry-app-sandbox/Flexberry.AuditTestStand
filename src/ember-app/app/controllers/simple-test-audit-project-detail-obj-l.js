@@ -6,7 +6,7 @@ export default ListFormController.extend({
 
     @property editFormRoute
     @type String
-    @default ''
+    @default 'simple-test-audit-project-detail-obj-e'
    */
-  editFormRoute: ''
+  editFormRoute: 'simple-test-audit-project-detail-obj-e'
 });
