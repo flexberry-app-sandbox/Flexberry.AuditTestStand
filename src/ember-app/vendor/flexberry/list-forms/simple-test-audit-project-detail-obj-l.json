@@ -1,0 +1,15 @@
+﻿{
+  "newForm": null,
+  "editForm": null,
+  "external": false,
+  "caption": "",
+  "name": "SimpleTestAuditProjectDetailObjL",
+  "className": "DetailObjL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "simple-test-audit-project-detail-obj",
+      "modelProjection": "DetailObjL"
+    }
+  ]
+}
