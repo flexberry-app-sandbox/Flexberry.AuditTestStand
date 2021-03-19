@@ -22,7 +22,7 @@
       }
     },
     "Backend": {
-      "AspNet": false,
+      "AspNet": true,
       "AspNetCore": false,
       "Java": false
     },
