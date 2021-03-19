@@ -1,0 +1,15 @@
+﻿{
+  "newForm": null,
+  "editForm": null,
+  "external": false,
+  "caption": "Master obj L",
+  "name": "SimpleTestAuditProjectMasterObjL",
+  "className": "MasterObjL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "simple-test-audit-project-master-obj",
+      "modelProjection": "MasterObjL"
+    }
+  ]
+}

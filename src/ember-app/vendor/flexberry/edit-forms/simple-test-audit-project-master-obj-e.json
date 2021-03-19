@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "MasterDetail.MasterObj",
+      "projection": "MasterObjL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Master obj E",
+  "name": "SimpleTestAuditProjectMasterObjE",
+  "className": "MasterObjE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "simple-test-audit-project-master-obj",
+      "modelProjection": "MasterObjE"
+    }
+  ]
+}

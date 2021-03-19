@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "",
+  "name": "SimpleTestAuditProjectDetailMasterE",
+  "className": "DetailMasterE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "simple-test-audit-project-detail-master",
+      "modelProjection": "DetailMasterE"
+    }
+  ]
+}
