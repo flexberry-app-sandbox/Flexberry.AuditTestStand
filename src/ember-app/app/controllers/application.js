@@ -39,11 +39,6 @@ export default Controller.extend({
             caption: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-detail-master-l.caption'),
             title: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-detail-master-l.title'),
             children: null
-          }, {
-            link: 'simple-test-audit-project-show-audit-form-u',
-            caption: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-show-audit-form-u.caption'),
-            title: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-show-audit-form-u.title'),
-            children: null
           }]
         }
       ]

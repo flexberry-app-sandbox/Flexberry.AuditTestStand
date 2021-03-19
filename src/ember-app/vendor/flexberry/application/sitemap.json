@@ -28,13 +28,6 @@
           "caption": "DetailMasterL",
           "title": "",
           "children": null
-        },
-        {
-          "link": "simple-test-audit-project-show-audit-form-u",
-          "menuName": null,
-          "caption": "ShowAuditFormU",
-          "title": "",
-          "children": null
         }
       ]
     }
