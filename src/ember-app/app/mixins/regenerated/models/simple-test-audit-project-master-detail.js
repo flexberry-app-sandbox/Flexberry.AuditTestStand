@@ -6,16 +6,22 @@ import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes'
 
 export let Model = Mixin.create({
   field: DS.attr('string'),
-  createTime: DS.attr('date'),
   creator: DS.attr('string'),
-  editTime: DS.attr('date'),
+  createTime: DS.attr('date'),
   editor: DS.attr('string'),
+  editTime: DS.attr('date'),
   masterObj: DS.belongsTo('simple-test-audit-project-master-obj', { inverse: 'masterDetail', async: false })
 });
 
 export let ValidationRules = {
   field: {
     descriptionKey: 'models.simple-test-audit-project-master-detail.validations.field.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
+  creator: {
+    descriptionKey: 'models.simple-test-audit-project-master-detail.validations.creator.__caption__',
     validators: [
       validator('ds-error'),
     ],
@@ -27,8 +33,8 @@ export let ValidationRules = {
       validator('date'),
     ],
   },
-  creator: {
-    descriptionKey: 'models.simple-test-audit-project-master-detail.validations.creator.__caption__',
+  editor: {
+    descriptionKey: 'models.simple-test-audit-project-master-detail.validations.editor.__caption__',
     validators: [
       validator('ds-error'),
     ],
@@ -38,12 +44,6 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('date'),
-    ],
-  },
-  editor: {
-    descriptionKey: 'models.simple-test-audit-project-master-detail.validations.editor.__caption__',
-    validators: [
-      validator('ds-error'),
     ],
   },
   masterObj: {

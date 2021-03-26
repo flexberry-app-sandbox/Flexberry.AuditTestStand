@@ -44,9 +44,6 @@
     <div class="page-header-userbar">
       <span id="fio" class="hidden">login</span>
       <a id="ExitButton" class="exit-btn" href="javascript:void(0)">{{t "forms.application.header.logout.caption"}}</a>
-      <button class="ui basic button mini" {{action (if login 'logout' 'goToLoginForm')}} style="margin:0.5em; background:#FFF linear-gradient(#FFFFFF, #FFF) !important;">
-        {{t (if login "forms.login.logout" "forms.login.caption")}}
-      </button>
     </div>
   </div>
 </div>

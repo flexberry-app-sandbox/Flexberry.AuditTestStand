@@ -16,15 +16,6 @@
       "ordered": false
     },
     {
-      "name": "createTime",
-      "type": "date",
-      "flexberryType": "AuditNullableDateTime",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
       "name": "creator",
       "type": "string",
       "flexberryType": "string",
@@ -34,7 +25,7 @@
       "ordered": false
     },
     {
-      "name": "editTime",
+      "name": "createTime",
       "type": "date",
       "flexberryType": "AuditNullableDateTime",
       "notNull": false,
@@ -46,6 +37,15 @@
       "name": "editor",
       "type": "string",
       "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "editTime",
+      "type": "date",
+      "flexberryType": "AuditNullableDateTime",
       "notNull": false,
       "defaultValue": "",
       "stored": true,

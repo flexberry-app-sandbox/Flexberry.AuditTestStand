@@ -5,17 +5,36 @@ import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
 
 export let Model = Mixin.create({
+  editTime: DS.attr('date'),
+  editor: DS.attr('string'),
+  creator: DS.attr('string'),
   detailName: DS.attr('string'),
   detailField: DS.attr('number'),
   createTime: DS.attr('date'),
-  creator: DS.attr('string'),
-  editTime: DS.attr('date'),
-  editor: DS.attr('string'),
   detailMaster: DS.belongsTo('simple-test-audit-project-detail-master', { inverse: null, async: false }),
   mainObj: DS.belongsTo('simple-test-audit-project-main-obj', { inverse: 'detailObj', async: false })
 });
 
 export let ValidationRules = {
+  editTime: {
+    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.editTime.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('date'),
+    ],
+  },
+  editor: {
+    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.editor.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
+  creator: {
+    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.creator.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
   detailName: {
     descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.detailName.__caption__',
     validators: [
@@ -34,25 +53,6 @@ export let ValidationRules = {
     validators: [
       validator('ds-error'),
       validator('date'),
-    ],
-  },
-  creator: {
-    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.creator.__caption__',
-    validators: [
-      validator('ds-error'),
-    ],
-  },
-  editTime: {
-    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.editTime.__caption__',
-    validators: [
-      validator('ds-error'),
-      validator('date'),
-    ],
-  },
-  editor: {
-    descriptionKey: 'models.simple-test-audit-project-detail-obj.validations.editor.__caption__',
-    validators: [
-      validator('ds-error'),
     ],
   },
   detailMaster: {

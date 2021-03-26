@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('simple-test-audit-project-master-detail', 'Unit | Model | simple-test-audit-project-master-detail', {
+moduleForModel('simple-test-audit-project-new-class1', 'Unit | Model | simple-test-audit-project-new-class1', {
   // Specify the other units that are required for this test.
   needs: [
     'model:simple-test-audit-project-detail-master',

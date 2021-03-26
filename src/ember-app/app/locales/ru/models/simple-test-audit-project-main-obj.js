@@ -98,14 +98,11 @@ export default {
     }
   },
   validations: {
-    name: {
-      __caption__: 'Name'
-    },
-    field: {
-      __caption__: 'Field'
-    },
     createTime: {
       __caption__: 'createTime'
+    },
+    name: {
+      __caption__: 'Name'
     },
     creator: {
       __caption__: 'creator'
@@ -115,6 +112,9 @@ export default {
     },
     editor: {
       __caption__: 'editor'
+    },
+    field: {
+      __caption__: 'Field'
     },
     hierarchy: {
       __caption__: 'Hierarchy'

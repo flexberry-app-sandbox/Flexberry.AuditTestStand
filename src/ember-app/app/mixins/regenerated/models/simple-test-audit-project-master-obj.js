@@ -5,40 +5,21 @@ import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
 
 export let Model = Mixin.create({
-  masterName: DS.attr('string'),
   masterField: DS.attr('number'),
-  createTime: DS.attr('date'),
-  creator: DS.attr('string'),
   editTime: DS.attr('date'),
+  masterName: DS.attr('string'),
+  creator: DS.attr('string'),
   editor: DS.attr('string'),
+  createTime: DS.attr('date'),
   masterDetail: DS.hasMany('simple-test-audit-project-master-detail', { inverse: 'masterObj', async: false })
 });
 
 export let ValidationRules = {
-  masterName: {
-    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.masterName.__caption__',
-    validators: [
-      validator('ds-error'),
-    ],
-  },
   masterField: {
     descriptionKey: 'models.simple-test-audit-project-master-obj.validations.masterField.__caption__',
     validators: [
       validator('ds-error'),
       validator('number', { allowString: true, allowBlank: true, integer: true }),
-    ],
-  },
-  createTime: {
-    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.createTime.__caption__',
-    validators: [
-      validator('ds-error'),
-      validator('date'),
-    ],
-  },
-  creator: {
-    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.creator.__caption__',
-    validators: [
-      validator('ds-error'),
     ],
   },
   editTime: {
@@ -48,10 +29,29 @@ export let ValidationRules = {
       validator('date'),
     ],
   },
+  masterName: {
+    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.masterName.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
+  creator: {
+    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.creator.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
   editor: {
     descriptionKey: 'models.simple-test-audit-project-master-obj.validations.editor.__caption__',
     validators: [
       validator('ds-error'),
+    ],
+  },
+  createTime: {
+    descriptionKey: 'models.simple-test-audit-project-master-obj.validations.createTime.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('date'),
     ],
   },
   masterDetail: {

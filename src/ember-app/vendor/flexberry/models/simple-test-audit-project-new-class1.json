@@ -1,0 +1,15 @@
+﻿{
+  "name": "SimpleTestAuditProjectNewClass1",
+  "modelName": "simple-test-audit-project-new-class1",
+  "className": "NewClass1",
+  "nameSpace": "SimpleTestAuditProject",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

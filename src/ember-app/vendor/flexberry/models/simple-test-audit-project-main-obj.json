@@ -7,27 +7,18 @@
   "parentClassName": null,
   "attrs": [
     {
-      "name": "name",
-      "type": "string",
-      "flexberryType": "string",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
-      "name": "field",
-      "type": "number",
-      "flexberryType": "int",
-      "notNull": false,
-      "defaultValue": "",
-      "stored": true,
-      "ordered": false
-    },
-    {
       "name": "createTime",
       "type": "date",
       "flexberryType": "AuditNullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
@@ -55,6 +46,15 @@
       "name": "editor",
       "type": "string",
       "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "field",
+      "type": "number",
+      "flexberryType": "int",
       "notNull": false,
       "defaultValue": "",
       "stored": true,
