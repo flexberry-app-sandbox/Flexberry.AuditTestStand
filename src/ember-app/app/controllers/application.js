@@ -44,6 +44,11 @@ export default Controller.extend({
             caption: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder1.caption'),
             title: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder1.title'),
             children: null
+          }, {
+            link: null,
+            caption: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder2.caption'),
+            title: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder2.title'),
+            children: null
           }]
         }
       ]

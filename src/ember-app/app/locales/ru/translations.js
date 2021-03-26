@@ -110,6 +110,10 @@ $.extend(true, translations, {
           'new-folder1': {
             caption: 'NewFolder1',
             title: 'NewFolder1'
+          },
+          'new-folder2': {
+            caption: 'NewFolder2',
+            title: 'NewFolder2'
           }
         },
         'audit-forms': {

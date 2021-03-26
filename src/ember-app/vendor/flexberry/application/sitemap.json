@@ -35,6 +35,13 @@
           "caption": "NewFolder1",
           "title": "NewFolder1",
           "children": null
+        },
+        {
+          "link": null,
+          "menuName": "new-folder2",
+          "caption": "NewFolder2",
+          "title": "NewFolder2",
+          "children": null
         }
       ]
     }
