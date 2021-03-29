@@ -41,23 +41,23 @@ export default {
     }
   },
   validations: {
+    masterName: {
+      __caption__: 'Master name'
+    },
     masterField: {
       __caption__: 'Master field'
     },
-    editTime: {
-      __caption__: 'editTime'
-    },
-    masterName: {
-      __caption__: 'Master name'
+    createTime: {
+      __caption__: 'createTime'
     },
     creator: {
       __caption__: 'creator'
     },
+    editTime: {
+      __caption__: 'editTime'
+    },
     editor: {
       __caption__: 'editor'
-    },
-    createTime: {
-      __caption__: 'createTime'
     },
     masterDetail: {
       __caption__: 'Master detail'

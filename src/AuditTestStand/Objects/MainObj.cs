@@ -34,7 +34,6 @@ namespace SimpleTestAuditProject
     [View("AuditView", new string[] {
             "Name as \'Name\'",
             "Field as \'Field\'",
-            "MasterObj as \'Master obj\'",
             "MasterObj.MasterName as \'Master name\'",
             "Hierarchy as \'Hierarchy\'",
             "Hierarchy.Name as \'Name\'",

@@ -5,28 +5,16 @@ import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
 
 export let Model = Mixin.create({
-  editor: DS.attr('string'),
-  creator: DS.attr('string'),
   name: DS.attr('string'),
   field1: DS.attr('number'),
+  field2: DS.attr('string'),
   createTime: DS.attr('date'),
+  creator: DS.attr('string'),
   editTime: DS.attr('date'),
-  field2: DS.attr('string')
+  editor: DS.attr('string')
 });
 
 export let ValidationRules = {
-  editor: {
-    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.editor.__caption__',
-    validators: [
-      validator('ds-error'),
-    ],
-  },
-  creator: {
-    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.creator.__caption__',
-    validators: [
-      validator('ds-error'),
-    ],
-  },
   name: {
     descriptionKey: 'models.simple-test-audit-project-detail-master.validations.name.__caption__',
     validators: [
@@ -40,11 +28,23 @@ export let ValidationRules = {
       validator('number', { allowString: true, allowBlank: true, integer: true }),
     ],
   },
+  field2: {
+    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.field2.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
   createTime: {
     descriptionKey: 'models.simple-test-audit-project-detail-master.validations.createTime.__caption__',
     validators: [
       validator('ds-error'),
       validator('date'),
+    ],
+  },
+  creator: {
+    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.creator.__caption__',
+    validators: [
+      validator('ds-error'),
     ],
   },
   editTime: {
@@ -54,8 +54,8 @@ export let ValidationRules = {
       validator('date'),
     ],
   },
-  field2: {
-    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.field2.__caption__',
+  editor: {
+    descriptionKey: 'models.simple-test-audit-project-detail-master.validations.editor.__caption__',
     validators: [
       validator('ds-error'),
     ],

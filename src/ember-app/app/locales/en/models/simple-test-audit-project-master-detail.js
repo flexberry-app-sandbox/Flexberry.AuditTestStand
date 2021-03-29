@@ -18,17 +18,17 @@ export default {
     field: {
       __caption__: 'field'
     },
-    creator: {
-      __caption__: 'creator'
-    },
     createTime: {
       __caption__: 'createTime'
     },
-    editor: {
-      __caption__: 'editor'
+    creator: {
+      __caption__: 'creator'
     },
     editTime: {
       __caption__: 'editTime'
+    },
+    editor: {
+      __caption__: 'editor'
     },
     masterObj: {
       __caption__: 'masterObj'

@@ -35,26 +35,26 @@ export default {
     }
   },
   validations: {
-    editor: {
-      __caption__: 'editor'
-    },
-    creator: {
-      __caption__: 'creator'
-    },
     name: {
       __caption__: 'Name'
     },
     field1: {
       __caption__: 'Field1'
     },
+    field2: {
+      __caption__: 'Field2'
+    },
     createTime: {
       __caption__: 'createTime'
+    },
+    creator: {
+      __caption__: 'creator'
     },
     editTime: {
       __caption__: 'editTime'
     },
-    field2: {
-      __caption__: 'Field2'
+    editor: {
+      __caption__: 'editor'
     }
   }
 };

@@ -5,12 +5,12 @@ import { validator } from 'ember-cp-validations';
 import { attr, belongsTo, hasMany } from 'ember-flexberry-data/utils/attributes';
 
 export let Model = Mixin.create({
-  createTime: DS.attr('date'),
   name: DS.attr('string'),
+  field: DS.attr('number'),
+  createTime: DS.attr('date'),
   creator: DS.attr('string'),
   editTime: DS.attr('date'),
   editor: DS.attr('string'),
-  field: DS.attr('number'),
   hierarchy: DS.belongsTo('simple-test-audit-project-main-obj', { inverse: null, async: false }),
   masterObj: DS.belongsTo('simple-test-audit-project-master-obj', { inverse: null, async: false }),
   currentDetailObj: DS.belongsTo('simple-test-audit-project-detail-obj', { inverse: null, async: false }),
@@ -18,17 +18,24 @@ export let Model = Mixin.create({
 });
 
 export let ValidationRules = {
+  name: {
+    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.name.__caption__',
+    validators: [
+      validator('ds-error'),
+    ],
+  },
+  field: {
+    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.field.__caption__',
+    validators: [
+      validator('ds-error'),
+      validator('number', { allowString: true, allowBlank: true, integer: true }),
+    ],
+  },
   createTime: {
     descriptionKey: 'models.simple-test-audit-project-main-obj.validations.createTime.__caption__',
     validators: [
       validator('ds-error'),
       validator('date'),
-    ],
-  },
-  name: {
-    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.name.__caption__',
-    validators: [
-      validator('ds-error'),
     ],
   },
   creator: {
@@ -48,13 +55,6 @@ export let ValidationRules = {
     descriptionKey: 'models.simple-test-audit-project-main-obj.validations.editor.__caption__',
     validators: [
       validator('ds-error'),
-    ],
-  },
-  field: {
-    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.field.__caption__',
-    validators: [
-      validator('ds-error'),
-      validator('number', { allowString: true, allowBlank: true, integer: true }),
     ],
   },
   hierarchy: {

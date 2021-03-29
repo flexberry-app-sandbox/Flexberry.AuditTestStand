@@ -14,7 +14,8 @@ import SimpleTestAuditProjectDetailObjModel from './models/simple-test-audit-pro
 import SimpleTestAuditProjectMainObjModel from './models/simple-test-audit-project-main-obj';
 import SimpleTestAuditProjectMasterDetailModel from './models/simple-test-audit-project-master-detail';
 import SimpleTestAuditProjectMasterObjModel from './models/simple-test-audit-project-master-obj';
-import SimpleTestAuditProjectNewClass1Model from './models/simple-test-audit-project-new-class1';
+import SimpleTestAuditProjectAuditObjectsAuditEntityL from './forms/simple-test-audit-project-audit-objects-audit-entity-l';
+import SimpleTestAuditProjectAuditObjectsAuditEntityE from './forms/simple-test-audit-project-audit-objects-audit-entity-e';
 
 const translations = {};
 $.extend(true, translations, EmberFlexberryTranslations);
@@ -25,8 +26,7 @@ $.extend(true, translations, {
     'simple-test-audit-project-detail-obj': SimpleTestAuditProjectDetailObjModel,
     'simple-test-audit-project-main-obj': SimpleTestAuditProjectMainObjModel,
     'simple-test-audit-project-master-detail': SimpleTestAuditProjectMasterDetailModel,
-    'simple-test-audit-project-master-obj': SimpleTestAuditProjectMasterObjModel,
-    'simple-test-audit-project-new-class1': SimpleTestAuditProjectNewClass1Model
+    'simple-test-audit-project-master-obj': SimpleTestAuditProjectMasterObjModel
   },
 
   'application-name': 'Simple test audit project',
@@ -37,6 +37,23 @@ $.extend(true, translations, {
     },
     index: {
       greeting: 'Добро пожаловать на тестовый стенд ember-flexberry!'
+    },
+
+    login: {
+      caption: 'Login',
+      logout: 'Logout',
+      back: 'Back',
+      login: 'Login',
+      password: 'Password',
+      'you-logged-as': 'You logged as: "{{login}}".',
+      errors: {
+        'empty-login': 'Login can not be empty.',
+        'empty-password': 'Password can not be empty.',
+        'server-error': 'Not response from server.',
+        'incorrect-auth-data': 'Wrong login or password.',
+        'login-please': 'Please, login.',
+        'unknown-error': 'Oh, something went wrong...',
+      },
     },
 
     application: {
@@ -106,14 +123,6 @@ $.extend(true, translations, {
           'simple-test-audit-project-detail-master-l': {
             caption: 'DetailMasterL',
             title: ''
-          },
-          'new-folder1': {
-            caption: 'NewFolder1',
-            title: 'NewFolder1'
-          },
-          'new-folder2': {
-            caption: 'NewFolder2',
-            title: 'NewFolder2'
           }
         },
         'audit-forms': {
@@ -142,7 +151,9 @@ $.extend(true, translations, {
     'simple-test-audit-project-detail-master-e': SimpleTestAuditProjectDetailMasterEForm,
     'simple-test-audit-project-detail-obj-e': SimpleTestAuditProjectDetailObjEForm,
     'simple-test-audit-project-main-obj-e': SimpleTestAuditProjectMainObjEForm,
-    'simple-test-audit-project-master-obj-e': SimpleTestAuditProjectMasterObjEForm
+    'simple-test-audit-project-master-obj-e': SimpleTestAuditProjectMasterObjEForm,
+    'simple-test-audit-project-audit-objects-audit-entity-l': SimpleTestAuditProjectAuditObjectsAuditEntityL,
+    'simple-test-audit-project-audit-objects-audit-entity-e': SimpleTestAuditProjectAuditObjectsAuditEntityE,
   },
 
 });

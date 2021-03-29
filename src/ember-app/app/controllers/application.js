@@ -2,12 +2,17 @@ import Controller from '@ember/controller';
 import $ from 'jquery';
 import { computed, observer } from '@ember/object';
 import { isNone } from '@ember/utils';
+import config from '../config/environment';
 import { A } from '@ember/array';
 import { inject as service } from '@ember/service';
-
-
+import { translationMacro as t } from 'ember-i18n';
 
 export default Controller.extend({
+
+  /**
+  */
+  login: '',
+
   sitemap: computed('i18n.locale', function () {
     let i18n = this.get('i18n');
 
@@ -39,15 +44,16 @@ export default Controller.extend({
             caption: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-detail-master-l.caption'),
             title: i18n.t('forms.application.sitemap.simple-test-audit-project.simple-test-audit-project-detail-master-l.title'),
             children: null
-          }, {
-            link: null,
-            caption: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder1.caption'),
-            title: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder1.title'),
-            children: null
-          }, {
-            link: null,
-            caption: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder2.caption'),
-            title: i18n.t('forms.application.sitemap.simple-test-audit-project.new-folder2.title'),
+          }]
+        }, {
+          link: null,
+          icon: 'list',
+          caption: i18n.t('forms.application.sitemap.audit-forms.caption'),
+          title: i18n.t('forms.application.sitemap.audit-forms.title'),
+          children: [{
+            link: 'simple-test-audit-project-audit-objects-audit-entity-l',
+            caption: i18n.t('forms.application.sitemap.audit-forms.audit-forms-data.caption'),
+            title: i18n.t('forms.application.sitemap.audit-forms.audit-forms-data.title'),
             children: null
           }]
         }
@@ -165,6 +171,101 @@ export default Controller.extend({
         $('.ui.sidebar.main.menu').sidebar('attach events', '.ui.sidebar.main.menu .item a', 'hide');
         this.set('_hideEventIsAttached', true);
       }
-    }
+    },
+
+    /**
+    */
+    login() {
+      let _this = this;
+      let login = _this.get('loginInput');
+      let password = _this.get('password');
+      if (login && password) {
+        _this._resetLoginErrors();
+        _this.set('tryToLogin', true);
+        $.ajax({
+          type: 'GET',
+          xhrFields: { withCredentials: true },
+          url: `${config.APP.backendUrls.api}/Login(login='${login}',password='${password}')`,
+          success(result) {
+            _this.set('tryToLogin', false);
+            if (result.value === true) {
+              _this._resetLoginData(login);
+              _this.transitionToRoute('index');
+            } else {
+              _this.set('errorMessage', t('forms.login.errors.incorrect-auth-data'));
+            }
+          },
+          error() {
+            _this.set('tryToLogin', false);
+            _this.set('errorMessage', t('forms.login.errors.server-error'));
+          },
+        });
+      } else {
+        if (!login) {
+          _this.set('emptyLogin', t('forms.login.errors.empty-login'));
+        }
+
+        if (!password) {
+          _this.set('emptyPassword', t('forms.login.errors.empty-password'));
+        }
+      }
+    },
+
+    /**
+    */
+    logout() {
+      let _this = this;
+      $.ajax({
+        type: 'GET',
+        xhrFields: { withCredentials: true },
+        url: `${config.APP.backendUrls.api}/Logout()`,
+        success(result) {
+          if (result.value === true) {
+            _this.set('login', '');
+          } else {
+            _this.set('errorMessage', t('forms.login.errors.unknown-error'));
+          }
+
+          _this.transitionToRoute('index');
+        },
+        error() {
+          _this.set('errorMessage', t('forms.login.errors.server-error'));
+          _this.transitionToRoute('index');
+        },
+      });
+    },
+
+    /**
+    */
+    goToLoginForm() {
+      this.transitionToRoute('login');
+    },
+
+    /**
+    */
+    closeLoginForm() {
+      this._resetLoginErrors();
+      this.transitionToRoute('index');
+    } 
+  },
+
+  /**
+    */
+   _resetLoginErrors() {
+    this.setProperties({
+      errorMessage: null,
+      emptyLogin: null,
+      emptyPassword: null,
+    });
+  },
+
+  /**
+  */
+  _resetLoginData(login) {
+    this.setProperties({
+      login: login,
+      loginInput: null,
+      password: null,
+    });
   }
 });
