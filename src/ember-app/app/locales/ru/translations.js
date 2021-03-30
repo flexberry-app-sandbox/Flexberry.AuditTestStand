@@ -14,8 +14,6 @@ import SimpleTestAuditProjectDetailObjModel from './models/simple-test-audit-pro
 import SimpleTestAuditProjectMainObjModel from './models/simple-test-audit-project-main-obj';
 import SimpleTestAuditProjectMasterDetailModel from './models/simple-test-audit-project-master-detail';
 import SimpleTestAuditProjectMasterObjModel from './models/simple-test-audit-project-master-obj';
-import SimpleTestAuditProjectAuditObjectsAuditEntityL from './forms/simple-test-audit-project-audit-objects-audit-entity-l';
-import SimpleTestAuditProjectAuditObjectsAuditEntityE from './forms/simple-test-audit-project-audit-objects-audit-entity-e';
 
 const translations = {};
 $.extend(true, translations, EmberFlexberryTranslations);
@@ -53,7 +51,11 @@ $.extend(true, translations, {
         'incorrect-auth-data': 'Wrong login or password.',
         'login-please': 'Please, login.',
         'unknown-error': 'Oh, something went wrong...',
-      },
+      },      
+    },
+
+    'i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity-l': {
+      caption: 'Аудит'
     },
 
     application: {
@@ -152,8 +154,6 @@ $.extend(true, translations, {
     'simple-test-audit-project-detail-obj-e': SimpleTestAuditProjectDetailObjEForm,
     'simple-test-audit-project-main-obj-e': SimpleTestAuditProjectMainObjEForm,
     'simple-test-audit-project-master-obj-e': SimpleTestAuditProjectMasterObjEForm,
-    'simple-test-audit-project-audit-objects-audit-entity-l': SimpleTestAuditProjectAuditObjectsAuditEntityL,
-    'simple-test-audit-project-audit-objects-audit-entity-e': SimpleTestAuditProjectAuditObjectsAuditEntityE,
   },
 
 });

@@ -51,7 +51,7 @@ export default Controller.extend({
           caption: i18n.t('forms.application.sitemap.audit-forms.caption'),
           title: i18n.t('forms.application.sitemap.audit-forms.title'),
           children: [{
-            link: 'simple-test-audit-project-audit-objects-audit-entity-l',
+            link: 'i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity-l',
             caption: i18n.t('forms.application.sitemap.audit-forms.audit-forms-data.caption'),
             title: i18n.t('forms.application.sitemap.audit-forms.audit-forms-data.title'),
             children: null

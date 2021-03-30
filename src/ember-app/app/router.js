@@ -7,9 +7,9 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
 
-  this.route('simple-test-audit-project-audit-objects-audit-entity-l');
-  this.route('simple-test-audit-project-audit-objects-audit-entity-e',
-    { path: 'simple-test-audit-project-audit-objects-audit-entity-e/:id' });
+  this.route('i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity-l');
+  this.route('i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity-e',
+    { path: 'i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity-e/:id' });
 
   this.route('simple-test-audit-project-detail-master-l');
   this.route('simple-test-audit-project-detail-master-e',
