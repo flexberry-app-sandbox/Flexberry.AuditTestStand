@@ -34,6 +34,7 @@ namespace SimpleTestAuditProject
     [View("AuditView", new string[] {
             "Name as \'Name\'",
             "Field as \'Field\'",
+            "MasterObj as \'Master obj\'",
             "MasterObj.MasterName as \'Master name\'",
             "Hierarchy as \'Hierarchy\'",
             "Hierarchy.Name as \'Name\'",
@@ -72,11 +73,11 @@ namespace SimpleTestAuditProject
         
         private string fEditor;
         
+        private SimpleTestAuditProject.MasterObj fMasterObj;
+        
         private SimpleTestAuditProject.MainObj fHierarchy;
         
         private SimpleTestAuditProject.DetailObj fCurrentDetailObj;
-        
-        private SimpleTestAuditProject.MasterObj fMasterObj;
         
         private SimpleTestAuditProject.DetailArrayOfDetailObj fDetailObj;
         
@@ -277,6 +278,40 @@ namespace SimpleTestAuditProject
         /// <summary>
         /// Main obj.
         /// </summary>
+        // *** Start programmer edit section *** (MainObj.MasterObj CustomAttributes)
+
+        // *** End programmer edit section *** (MainObj.MasterObj CustomAttributes)
+        [PropertyStorage(new string[] {
+                "MasterObj"})]
+        [NotNull()]
+        public virtual SimpleTestAuditProject.MasterObj MasterObj
+        {
+            get
+            {
+                // *** Start programmer edit section *** (MainObj.MasterObj Get start)
+
+                // *** End programmer edit section *** (MainObj.MasterObj Get start)
+                SimpleTestAuditProject.MasterObj result = this.fMasterObj;
+                // *** Start programmer edit section *** (MainObj.MasterObj Get end)
+
+                // *** End programmer edit section *** (MainObj.MasterObj Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (MainObj.MasterObj Set start)
+
+                // *** End programmer edit section *** (MainObj.MasterObj Set start)
+                this.fMasterObj = value;
+                // *** Start programmer edit section *** (MainObj.MasterObj Set end)
+
+                // *** End programmer edit section *** (MainObj.MasterObj Set end)
+            }
+        }
+        
+        /// <summary>
+        /// Main obj.
+        /// </summary>
         // *** Start programmer edit section *** (MainObj.Hierarchy CustomAttributes)
 
         // *** End programmer edit section *** (MainObj.Hierarchy CustomAttributes)
@@ -337,40 +372,6 @@ namespace SimpleTestAuditProject
                 // *** Start programmer edit section *** (MainObj.CurrentDetailObj Set end)
 
                 // *** End programmer edit section *** (MainObj.CurrentDetailObj Set end)
-            }
-        }
-        
-        /// <summary>
-        /// Main obj.
-        /// </summary>
-        // *** Start programmer edit section *** (MainObj.MasterObj CustomAttributes)
-
-        // *** End programmer edit section *** (MainObj.MasterObj CustomAttributes)
-        [PropertyStorage(new string[] {
-                "MasterObj"})]
-        [NotNull()]
-        public virtual SimpleTestAuditProject.MasterObj MasterObj
-        {
-            get
-            {
-                // *** Start programmer edit section *** (MainObj.MasterObj Get start)
-
-                // *** End programmer edit section *** (MainObj.MasterObj Get start)
-                SimpleTestAuditProject.MasterObj result = this.fMasterObj;
-                // *** Start programmer edit section *** (MainObj.MasterObj Get end)
-
-                // *** End programmer edit section *** (MainObj.MasterObj Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (MainObj.MasterObj Set start)
-
-                // *** End programmer edit section *** (MainObj.MasterObj Set start)
-                this.fMasterObj = value;
-                // *** Start programmer edit section *** (MainObj.MasterObj Set end)
-
-                // *** End programmer edit section *** (MainObj.MasterObj Set end)
             }
         }
         

@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Reflection.AssemblyTitle("AuditTestStand")]
-[assembly: System.Reflection.AssemblyDescription("AuditTestStand")]
+[assembly: System.Reflection.AssemblyTitle("SimpleTestAuditProject")]
+[assembly: System.Reflection.AssemblyDescription("SimpleTestAuditProject")]
 [assembly: System.Reflection.AssemblyConfiguration("")]
 [assembly: System.Reflection.AssemblyCompany("IIS")]
-[assembly: System.Reflection.AssemblyProduct("AuditTestStand")]
+[assembly: System.Reflection.AssemblyProduct("SimpleTestAuditProject")]
 [assembly: System.Reflection.AssemblyCopyright("(c) 2004-2017. IIS ZAO. All rights reserved.")]
 [assembly: System.Reflection.AssemblyTrademark("")]
 [assembly: System.Reflection.AssemblyCulture("")]

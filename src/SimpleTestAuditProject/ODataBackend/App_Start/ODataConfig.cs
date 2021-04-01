@@ -20,13 +20,12 @@
     using Unity.AspNet.WebApi;
     using ICSSoft.STORMNET.Business;
     using ICSSoft.STORMNET.Business.Audit;
-    using Unity.Lifetime;
-    using ICSSoft.STORMNET.Business.Audit.Objects;
-    using NewPlatform.Flexberry.Security;
-    using System.Web.Security;
-    using ICSSoft.STORMNET.Security;
     using System.Web.Http.Cors;
+    using ICSSoft.STORMNET.Security;
+    using ICSSoft.STORMNET.Business.Audit.Objects;
+    using System.Web.Security;
     using System.Web;
+    using NewPlatform.Flexberry.Security;
 
     /// <summary>
     /// Configure OData Service.
@@ -53,26 +52,18 @@
             // To support CORS uncomment the line below.
             var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*") { SupportsCredentials = true };
             config.EnableCors(cors);
-            //config.EnableCors(new DynamicCorsPolicyProvider());
-            // Use constructor with true first parameter for enable SupportsCredentials.
-
-            // Use Unity as WebAPI dependency resolver
-            config.DependencyResolver = new UnityDependencyResolver(container);
 
             // Init audit.
             var dataService = container.Resolve<IDataService>();
             AuditSetter.InitAuditService(dataService);
 
-            // Сервис настроек пользователя.
-            if (container.IsRegistered<IUserSettingsService>())
-                UserSettingsService.Current = container.Resolve<IUserSettingsService>();
-            else
-                LogService.LogWarn("IUserSettingsService не сконфигурирован в Unity. Будет использована реализация по умолчанию.");
+            // Use Unity as WebAPI dependency resolver
+            config.DependencyResolver = new UnityDependencyResolver(container);
 
             // Create EDM model builder
             var assemblies = new[]
             { 
-                Assembly.Load("AuditTestStand(Objects)"),
+                Assembly.Load("SimpleTestAuditProject(Objects)"),
                 typeof(ApplicationLog).Assembly,
                 typeof(UserSetting).Assembly,
                 typeof(FlexberryUserSetting).Assembly,
@@ -80,7 +71,6 @@
                 typeof(AuditEntity).Assembly,
                 typeof(Lock).Assembly
             };
-
             var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
             builder.PropertyFilter = PropertyFilter;
 
@@ -100,6 +90,23 @@
         private static void CallbackAfterCreate(DataObject dataObject)
         {
             // TODO: implement handler
+        }
+
+        /// <summary>
+        /// Delegate containing properties filtering logic.
+        /// Resulting EDM models will contain only those properties for which this delegate will return <c>true</c>.
+        /// </summary>
+        /// <param name="propertyInfo">Property metadata.</param>
+        /// <returns>Flag indicating whether to include property into resulting EDM model or not.</returns>
+        private static bool PropertyFilter(PropertyInfo propertyInfo)
+        {
+            return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
+        }
+
+
+        private static string Test(QueryParameters queryParameters)
+        {
+            return "Hello world!";
         }
 
         /// <summary>
@@ -152,22 +159,6 @@
                 return string.Empty;
 
             return ticket.Name;
-        }
-
-        /// <summary>
-        /// Delegate containing properties filtering logic.
-        /// Resulting EDM models will contain only those properties for which this delegate will return <c>true</c>.
-        /// </summary>
-        /// <param name="propertyInfo">Property metadata.</param>
-        /// <returns>Flag indicating whether to include property into resulting EDM model or not.</returns>
-        private static bool PropertyFilter(PropertyInfo propertyInfo)
-        {
-            return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
-        }
-
-        private static string Test(QueryParameters queryParameters)
-        {
-            return "Hello world!";
         }
     }
 }
