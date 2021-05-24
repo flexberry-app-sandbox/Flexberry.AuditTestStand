@@ -31,7 +31,13 @@ namespace SimpleTestAuditProject
     [AutoAltered()]
     [AccessType(ICSSoft.STORMNET.AccessType.none)]
     [View("AuditView", new string[] {
-            "Field as \'Field\'"})]
+            "Field as \'Field\'",
+            "MasterObj.MasterName",
+            "MasterObj.MasterField",
+            "CreateTime",
+            "Creator",
+            "EditTime",
+            "Editor"})]
     [View("MasterDetailD", new string[] {
             "Field",
             "MasterObj"}, Hidden=new string[] {

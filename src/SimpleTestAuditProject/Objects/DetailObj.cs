@@ -34,17 +34,17 @@ namespace SimpleTestAuditProject
     [View("AuditView", new string[] {
             "DetailName as \'Detail name\'",
             "DetailField as \'Detail field\'",
-            "DetailMaster as \'Detail master\'",
-            "DetailMaster.Name as \'Name\'"}, Hidden=new string[] {
-            "DetailMaster.Name"})]
-    [MasterViewDefineAttribute("AuditView", "DetailMaster", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
+            "MainObj.Name",
+            "MainObj.Field",
+            "CreateTime",
+            "Creator",
+            "EditTime",
+            "Editor"})]
     [View("DetailObjD", new string[] {
             "DetailName",
             "DetailField",
-            "MainObj",
-            "DetailMaster"}, Hidden=new string[] {
+            "MainObj"}, Hidden=new string[] {
             "MainObj"})]
-    [MasterViewDefineAttribute("DetailObjD", "DetailMaster", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
     [View("DetailObjE", new string[] {
             "DetailName as \'Detail name\'",
             "DetailField as \'Detail field\'"})]
@@ -65,8 +65,6 @@ namespace SimpleTestAuditProject
         private System.Nullable<System.DateTime> fEditTime;
         
         private string fEditor;
-        
-        private SimpleTestAuditProject.DetailMaster fDetailMaster;
         
         private SimpleTestAuditProject.MainObj fMainObj;
         
@@ -261,39 +259,6 @@ namespace SimpleTestAuditProject
                 // *** Start programmer edit section *** (DetailObj.Editor Set end)
 
                 // *** End programmer edit section *** (DetailObj.Editor Set end)
-            }
-        }
-        
-        /// <summary>
-        /// Detail obj.
-        /// </summary>
-        // *** Start programmer edit section *** (DetailObj.DetailMaster CustomAttributes)
-
-        // *** End programmer edit section *** (DetailObj.DetailMaster CustomAttributes)
-        [PropertyStorage(new string[] {
-                "DetailMaster"})]
-        public virtual SimpleTestAuditProject.DetailMaster DetailMaster
-        {
-            get
-            {
-                // *** Start programmer edit section *** (DetailObj.DetailMaster Get start)
-
-                // *** End programmer edit section *** (DetailObj.DetailMaster Get start)
-                SimpleTestAuditProject.DetailMaster result = this.fDetailMaster;
-                // *** Start programmer edit section *** (DetailObj.DetailMaster Get end)
-
-                // *** End programmer edit section *** (DetailObj.DetailMaster Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (DetailObj.DetailMaster Set start)
-
-                // *** End programmer edit section *** (DetailObj.DetailMaster Set start)
-                this.fDetailMaster = value;
-                // *** Start programmer edit section *** (DetailObj.DetailMaster Set end)
-
-                // *** End programmer edit section *** (DetailObj.DetailMaster Set end)
             }
         }
         

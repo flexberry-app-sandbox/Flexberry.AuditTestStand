@@ -13,25 +13,6 @@ const Validations = buildValidations(ValidationRules, {
 });
 
 let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, MainObjMixin, Validations, {
-  init() {
-    this._super(...arguments);
-    this.on('preSave', this._modelPreSave);
-  },
-
-  _modelPreSave(options) {
-    options.promises = [];
-    /*if (this.get('agent.name') !== this.get('fIO')) {
-      this.get('agent').set('name', this.get('fIO'));
-    }
-
-    if (this.get('agent.isNew') || this.get('agent.hasDirtyAttributes')) {
-      options.promises.push(this.get('agent').save());
-    }*/
-  },
-
-  willDestroy() {
-    this.off('preSave', this._modelPreSave);
-  }
 });
 
 defineProjections(Model);

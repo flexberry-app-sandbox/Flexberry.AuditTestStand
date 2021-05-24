@@ -57,7 +57,15 @@ export let ValidationRules = {
 
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('AuditView', 'simple-test-audit-project-master-detail', {
-    field: attr('Field', { index: 0 })
+    field: attr('Field', { index: 0 }),
+    masterObj: belongsTo('simple-test-audit-project-master-obj', '', {
+      masterName: attr('', { index: 1 }),
+      masterField: attr('', { index: 2 })
+    }, { index: -1, hidden: true }),
+    createTime: attr('', { index: 3 }),
+    creator: attr('', { index: 4 }),
+    editTime: attr('', { index: 5 }),
+    editor: attr('', { index: 6 })
   });
 
   modelClass.defineProjection('MasterDetailD', 'simple-test-audit-project-master-detail', {

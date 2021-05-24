@@ -37,10 +37,7 @@ namespace SimpleTestAuditProject
             "MasterObj as \'Master obj\'",
             "MasterObj.MasterName as \'Master name\'",
             "Hierarchy as \'Hierarchy\'",
-            "Hierarchy.Name as \'Name\'",
-            "CurrentDetailObj",
-            "CurrentDetailObj.DetailName",
-            "CurrentDetailObj.DetailField"})]
+            "Hierarchy.Name as \'Name\'"})]
     [AssociatedDetailViewAttribute("AuditView", "DetailObj", "AuditView", true, "", "Detail obj", true, new string[] {
             ""})]
     [View("MainObjE", new string[] {
@@ -50,9 +47,7 @@ namespace SimpleTestAuditProject
             "MasterObj.MasterName",
             "MasterObj.MasterField",
             "Hierarchy",
-            "Hierarchy.Name",
-            "CurrentDetailObj",
-            "CurrentDetailObj.DetailName"})]
+            "Hierarchy.Name"})]
     [AssociatedDetailViewAttribute("MainObjE", "DetailObj", "DetailObjD", true, "", "", true, new string[] {
             ""})]
     [View("MainObjL", new string[] {
@@ -76,8 +71,6 @@ namespace SimpleTestAuditProject
         private SimpleTestAuditProject.MasterObj fMasterObj;
         
         private SimpleTestAuditProject.MainObj fHierarchy;
-        
-        private SimpleTestAuditProject.DetailObj fCurrentDetailObj;
         
         private SimpleTestAuditProject.DetailArrayOfDetailObj fDetailObj;
         
@@ -339,39 +332,6 @@ namespace SimpleTestAuditProject
                 // *** Start programmer edit section *** (MainObj.Hierarchy Set end)
 
                 // *** End programmer edit section *** (MainObj.Hierarchy Set end)
-            }
-        }
-        
-        /// <summary>
-        /// Main obj.
-        /// </summary>
-        // *** Start programmer edit section *** (MainObj.CurrentDetailObj CustomAttributes)
-
-        // *** End programmer edit section *** (MainObj.CurrentDetailObj CustomAttributes)
-        [PropertyStorage(new string[] {
-                "CurrentDetailObj"})]
-        public virtual SimpleTestAuditProject.DetailObj CurrentDetailObj
-        {
-            get
-            {
-                // *** Start programmer edit section *** (MainObj.CurrentDetailObj Get start)
-
-                // *** End programmer edit section *** (MainObj.CurrentDetailObj Get start)
-                SimpleTestAuditProject.DetailObj result = this.fCurrentDetailObj;
-                // *** Start programmer edit section *** (MainObj.CurrentDetailObj Get end)
-
-                // *** End programmer edit section *** (MainObj.CurrentDetailObj Get end)
-                return result;
-            }
-            set
-            {
-                // *** Start programmer edit section *** (MainObj.CurrentDetailObj Set start)
-
-                // *** End programmer edit section *** (MainObj.CurrentDetailObj Set start)
-                this.fCurrentDetailObj = value;
-                // *** Start programmer edit section *** (MainObj.CurrentDetailObj Set end)
-
-                // *** End programmer edit section *** (MainObj.CurrentDetailObj Set end)
             }
         }
         

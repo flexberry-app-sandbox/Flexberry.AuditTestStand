@@ -1,11 +1,11 @@
-import Mixin from '@ember/object/mixin';
 import $ from 'jquery';
+import Mixin from '@ember/object/mixin';
 
-export let Serializer = Mixin.create({
+export let OfflineSerializer = Mixin.create({
   getAttrs: function () {
     let parentAttrs = this._super();
     let attrs = {
-      mainObj: { serialize: 'odata-id', deserialize: 'records' }
+      masterObj: { serialize: 'id', deserialize: 'records' }
     };
 
     return $.extend(true, {}, parentAttrs, attrs);

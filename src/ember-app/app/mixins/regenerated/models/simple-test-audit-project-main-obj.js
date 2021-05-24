@@ -11,9 +11,8 @@ export let Model = Mixin.create({
   creator: DS.attr('string'),
   editTime: DS.attr('date'),
   editor: DS.attr('string'),
-  hierarchy: DS.belongsTo('simple-test-audit-project-main-obj', { inverse: null, async: false }),
   masterObj: DS.belongsTo('simple-test-audit-project-master-obj', { inverse: null, async: false }),
-  currentDetailObj: DS.belongsTo('simple-test-audit-project-detail-obj', { inverse: null, async: false }),
+  hierarchy: DS.belongsTo('simple-test-audit-project-main-obj', { inverse: null, async: false }),
   detailObj: DS.hasMany('simple-test-audit-project-detail-obj', { inverse: 'mainObj', async: false })
 });
 
@@ -57,12 +56,6 @@ export let ValidationRules = {
       validator('ds-error'),
     ],
   },
-  hierarchy: {
-    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.hierarchy.__caption__',
-    validators: [
-      validator('ds-error'),
-    ],
-  },
   masterObj: {
     descriptionKey: 'models.simple-test-audit-project-main-obj.validations.masterObj.__caption__',
     validators: [
@@ -70,8 +63,8 @@ export let ValidationRules = {
       validator('presence', true),
     ],
   },
-  currentDetailObj: {
-    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.currentDetailObj.__caption__',
+  hierarchy: {
+    descriptionKey: 'models.simple-test-audit-project-main-obj.validations.hierarchy.__caption__',
     validators: [
       validator('ds-error'),
     ],
@@ -95,16 +88,17 @@ export let defineProjections = function (modelClass) {
     hierarchy: belongsTo('simple-test-audit-project-main-obj', 'Hierarchy', {
       name: attr('Name', { index: 5 })
     }, { index: 4 }),
-    currentDetailObj: belongsTo('simple-test-audit-project-detail-obj', '', {
-      detailName: attr('', { index: 7 }),
-      detailField: attr('', { index: 8 })
-    }, { index: 6 }),
     detailObj: hasMany('simple-test-audit-project-detail-obj', 'Detail obj', {
       detailName: attr('Detail name', { index: 0 }),
       detailField: attr('Detail field', { index: 1 }),
-      detailMaster: belongsTo('simple-test-audit-project-detail-master', 'Detail master', {
-        name: attr('Name', { index: 3, hidden: true })
-      }, { index: 2, displayMemberPath: 'name' })
+      mainObj: belongsTo('simple-test-audit-project-main-obj', '', {
+        name: attr('', { index: 2 }),
+        field: attr('', { index: 3 })
+      }, { index: -1, hidden: true }),
+      createTime: attr('', { index: 4 }),
+      creator: attr('', { index: 5 }),
+      editTime: attr('', { index: 6 }),
+      editor: attr('', { index: 7 })
     })
   });
 
@@ -118,18 +112,12 @@ export let defineProjections = function (modelClass) {
     hierarchy: belongsTo('simple-test-audit-project-main-obj', '', {
       name: attr('', { index: 6 })
     }, { index: 5 }),
-    currentDetailObj: belongsTo('simple-test-audit-project-detail-obj', '', {
-      detailName: attr('', { index: 8 })
-    }, { index: 7 }),
     detailObj: hasMany('simple-test-audit-project-detail-obj', '', {
       detailName: attr('', { index: 0 }),
       detailField: attr('', { index: 1 }),
       mainObj: belongsTo('simple-test-audit-project-main-obj', '', {
 
-      }, { index: 2, hidden: true }),
-      detailMaster: belongsTo('simple-test-audit-project-detail-master', '', {
-
-      }, { index: 3, displayMemberPath: 'name' })
+      }, { index: 2, hidden: true })
     })
   });
 

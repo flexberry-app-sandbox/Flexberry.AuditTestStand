@@ -68,7 +68,15 @@ export let defineProjections = function (modelClass) {
     masterName: attr('Master name', { index: 0 }),
     masterField: attr('Master field', { index: 1 }),
     masterDetail: hasMany('simple-test-audit-project-master-detail', 'Master detail', {
-      field: attr('Field', { index: 0 })
+      field: attr('Field', { index: 0 }),
+      masterObj: belongsTo('simple-test-audit-project-master-obj', '', {
+        masterName: attr('', { index: 1 }),
+        masterField: attr('', { index: 2 })
+      }, { index: -1, hidden: true }),
+      createTime: attr('', { index: 3 }),
+      creator: attr('', { index: 4 }),
+      editTime: attr('', { index: 5 }),
+      editor: attr('', { index: 6 })
     })
   });
 
